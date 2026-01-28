@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORM</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="javascript" href="newjs.js">
+  </head>
 <body>
-    <form action="html_prac_01.html">
+
+    <!-- <form action="html_prac_01.html">
     <form>
         Name: <input type="text" placeholder="Your Name">
         <br>
@@ -31,7 +33,7 @@
 <input type="submit" value="submit" name="value">
     </form>
 </form>
-<!-- 
+
 <table border="1">
   <caption><b>Student Details</b></caption>
   <tr>
@@ -50,15 +52,64 @@
     <td>Male</td>
   </tr>
 </table> -->
-<script>
-  
-console.log("Hello first")
-setTimeout(()=>{console.log("1")},2000)
-setTimeout(()=>{console.log(" 2 ")},2500)
-setTimeout(()=>{console.log(" 3 ")},3000)
-setTimeout(()=>{console.log("4 ")},4000)
-console.log("Hello second")
-</script>
 
+<input type="text" id="name" placeholder="Enter the name">
+<button class="btn"> Add Students </button>
+<div class="list"></div>
+<script >
+  
+  
+// console.log("Hello first")
+// setTimeout(()=>{console.log("1")},2000)
+// setTimeout(()=>{console.log(" 2 ")},2500)
+// setTimeout(()=>{console.log(" 3 ")},3000)
+// setTimeout(()=>{console.log("4 ")},4000)
+// console.log("Hello second")
+
+// setTimeout(() => {
+//   alert("Line after 2sec")  
+// }, 2*2000);
+
+// const timerID= setInterval(() => {console.log("setInterval")}, 1000)
+
+// const timeoutID =setTimeout(() => {clearInterval(timerID)}, 10000)
+// clearTimeout(timeoutID)
+
+  
+// const timerID= setInterval(() => {console.log("setInterval")}, 1000)
+
+// const timeoutID =setTimeout(() => {clearInterval(timerID)}, 10000)
+
+// let num=1;
+
+// const id=setInterval(() => {
+//   if(num===10)clearInterval(id)
+//   console.log(num)
+// num+=1
+// }, 1000);
+
+// console.log("before timeout")
+// setTimeout(() => {
+//   console.log("settimeout")
+// }, 0);
+// console.log("After timeout")
+
+const name = document.querySelector("#name")
+const btn = document.querySelector(".btn")
+const list = document.querySelector(".list")
+btn.addEventListener('click',()=>{
+    const li= document.createElement('li')
+    const dlt = document.createElement('button')
+    dlt.innerText= "Delete"
+    li.innerText=name.value;
+    dlt.addEventListener("click",()=>{
+        list.removeChild(li)
+    })
+    li.appendChild(dlt)
+    list.appendChild(li)
+    name.value=""
+}) 
+
+</script>
 </body>
 </html>

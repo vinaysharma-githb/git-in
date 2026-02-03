@@ -1,0 +1,84 @@
+
+
+  
+  
+// console.log("Hello first")
+// setTimeout(()=>{console.log("1")},2000)
+// setTimeout(()=>{console.log(" 2 ")},2500)
+// setTimeout(()=>{console.log(" 3 ")},3000)
+// setTimeout(()=>{console.log("4 ")},4000)
+// console.log("Hello second")
+
+// setTimeout(() => {
+//   alert("Line after 2sec")  
+// }, 2*2000);
+
+// const timerID= setInterval(() => {console.log("setInterval")}, 1000)
+
+// const timeoutID =setTimeout(() => {clearInterval(timerID)}, 10000)
+// clearTimeout(timeoutID)
+
+  
+// const timerID= setInterval(() => {console.log("setInterval")}, 1000)
+
+// const timeoutID =setTimeout(() => {clearInterval(timerID)}, 10000)
+
+// let num=1;
+
+// const id=setInterval(() => {
+//   if(num===10)clearInterval(id)
+//   console.log(num)
+// num+=1
+// }, 1000);
+
+// console.log("before timeout")
+// setTimeout(() => {
+//   console.log("settimeout")
+// }, 0);
+// console.log("After timeout")
+
+// const name = document.querySelector("#name")
+// const btn = document.querySelector(".btn")
+// const list = document.querySelector(".list")
+// btn.addEventListener('click',()=>{
+//     const li= document.createElement('li')
+//     const dlt = document.createElement('button')
+//     dlt.innerText= "Delete"
+//     li.innerText=name.value;
+//     dlt.addEventListener("click",()=>{
+//         list.removeChild(li)
+//     })
+//     li.appendChild(dlt)
+//     list.appendChild(li)
+//     name.value=""
+// }) 
+//     function print(num){
+//     setTimeout(() => {
+//         console.log("Inside print")
+//         num()
+//     }, 2000);
+// }
+
+// function sample(){
+//     console.log("Inside callback")
+// }
+
+// print(sample)
+
+console.log("Starting Homework")
+setTimeout(() => {
+    console.log("Finished Homework")
+    console.log("Hello World")
+
+    setTimeout(() => {
+       console.log("This is another timeout function inside first one") 
+       console.log("This is another timeout function ") 
+
+       setTimeout(() => {
+        console.log("This is function inside second function")
+        console.log("This is another function ")
+       }, 1500);
+    },2000 );
+    
+}, 2500);
+

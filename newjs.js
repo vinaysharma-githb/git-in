@@ -166,21 +166,67 @@
     
 // }, 2500);
 
-const p=new Promise((res,rej)=>{
-    let done= true;
-    setTimeout(() => {
-        if(done){
-            res({name:"Anand",age:20})
-        }else{
-            rej("Word has not been completed")
-        }
-    }, 5000);
-})
+// const p=new Promise((res,rej)=>{
+//     let done= true;
+//     setTimeout(() => {
+//         if(done){
+//             res({name:"Anand",age:20})
+//         }else{
+//             rej("Word has not been completed")
+//         }
+//     }, 5000);
+// })
 
-p.then((data)=>{
-    console.log(data.name)
-}).catcherror((err)=>{
+// p.then((data)=>{
+//     console.log(data.name)
+// }).catcherror((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("Finally block")
+// })
+
+function eatdinner(){
+    const p = new Promise((res,rej)=>{
+        let done = false;
+        setTimeout(() => {
+            if(done){
+                console.log("Dinner completed")
+                res("Dinner is done")
+            }else{
+                rej("Dinner is not done")
+            }
+        }, 2500);
+    })
+    return p
+}
+
+
+function gotoplayground(){
+    const p = new Promise((res,rej)=>{
+        let done = false;
+        setTimeout(() => {
+            if(done){
+                console.log("Went to playground")
+                res("Playground time")
+            }else{
+                rej("Not allowed to go")
+            }
+        }, 2600);
+    })
+    return p
+}
+
+
+dohomework().then((data)=>{
+    console.log(data)
+    return eatdinner
+}).then((data)=>{
+    console.log(data)
+    return gotoplayground
+}).then((data)=>{
+    console.log(data)
+}).catch((err)=>{
     console.log(err)
 }).finally(()=>{
-    console.log("Finally block")
+    console.log()
 })
